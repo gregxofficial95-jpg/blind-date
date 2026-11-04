@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Preferences — Blind Date</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/supabase.js"></script>
+  <script src="js/profile.js" defer></script>
+</head>
+<body>
+  <main class="auth-container">
+    <a href="dashboard.html" class="brand">BLIND DATE<span>.</span></a>
+
+    <section class="auth-card" style="max-width:550px;">
+      <p class="eyebrow">LET US FIND YOUR TYPE</p>
+      <h1>Build your profile.</h1>
+      <p class="subtitle">Tell us about yourself and the person you'd like to meet.</p>
+
+      <form id="profileForm">
+        <label>Your gender</label>
+        <select id="gender" required>
+          <option value="">Select</option>
+          <option>Man</option>
+          <option>Woman</option>
+          <option>Another identity</option>
+        </select>
+
+        <label>Interested in</label>
+        <select id="preferredGender" required>
+          <option value="">Select</option>
+          <option>Men</option>
+          <option>Women</option>
+          <option>Any gender</option>
+        </select>
+
+        <label>What are you looking for?</label>
+        <select id="lookingFor" required>
+          <option value="">Choose your intention</option>
+          <option value="One-time encounter">One-time encounter</option>
+          <option value="Dating">Dating</option>
+          <option value="Serious relationship">Serious relationship</option>
+          <option value="See where it goes">See where it goes</option>
+        </select>
+
+        <label>Your academic level</label>
+        <select id="schoolLevel" required>
+          <option value="">Select your level</option>
+          <option value="100">100 Level</option>
+          <option value="200">200 Level</option>
+          <option value="300">300 Level</option>
+          <option value="400">400 Level</option>
+          <option value="500">500 Level</option>
+          <option value="600">600 Level</option>
+        </select>
+
+        <label>Preferred academic levels</label>
+        <div id="levelChoices" class="level-options">
+          <label><input type="checkbox" value="100"> 100</label>
+          <label><input type="checkbox" value="200"> 200</label>
+          <label><input type="checkbox" value="300"> 300</label>
+          <label><input type="checkbox" value="400"> 400</label>
+          <label><input type="checkbox" value="500"> 500</label>
+          <label><input type="checkbox" value="600"> 600</label>
+          <label><input type="checkbox" id="anyLevel"> Any Level</label>
+        </div>
+
+        <p class="subtitle" style="margin:10px 0 0;">
+          Select up to three levels, or choose Any Level.
+        </p>
+
+        <label>Tell us about your interests</label>
+        <textarea id="interests" rows="4" placeholder="Your hobbies, interests and things you enjoy..."></textarea>
+
+        <button type="submit" id="saveProfileButton">Save my profile</button>
+        <p id="profileMessage" role="status"></p>
+      </form>
+    </section>
+  </main>
+
+  <style>
+    #profileForm select,
+    #profileForm textarea {
+      width:100%;
+      padding:14px;
+      background:#211f1a;
+      border:1px solid #39352c;
+      color:white;
+      border-radius:3px;
+      font-family:inherit;
+      margin-bottom:8px;
+    }
+
+    .level-options {
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:12px;
+      margin:15px 0;
+    }
+
+    .level-options label {
+      display:flex;
+      align-items:center;
+      gap:7px;
+      color:var(--cream);
+      font-size:12px;
+      margin:0 !important;
+    }
+
+    .level-options input {
+      accent-color:var(--gold);
+    }
+  </style>
+</body>
+</html>
