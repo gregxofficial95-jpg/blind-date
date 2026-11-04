@@ -1,1 +1,139 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blind Date — Let Fate Introduce You</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .hero {
+      min-height: 85vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 50px 20px;
+    }
+    .hero-tag {
+      color: var(--gold);
+      letter-spacing: 4px;
+      font-size: 10px;
+      margin-bottom: 25px;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(48px, 9vw, 88px);
+      font-weight: 500;
+      line-height: 1.1;
+      max-width: 850px;
+    }
+    .hero h1 span { color: var(--gold); }
+    .hero p {
+      color: var(--muted);
+      max-width: 480px;
+      line-height: 1.8;
+      margin: 25px 0 35px;
+      font-size: 14px;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .hero-actions a {
+      padding: 15px 28px;
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 700;
+      border: 1px solid var(--gold);
+    }
+    .primary-link { background: var(--gold); color: var(--black); }
+    .secondary-link { color: var(--gold); }
+    .how-section {
+      padding: 70px 20px;
+      background: #191713;
+      text-align: center;
+    }
+    .how-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 35px;
+      font-weight: 500;
+      margin-bottom: 35px;
+    }
+    .steps {
+      max-width: 950px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+    .step {
+      padding: 28px 20px;
+      border: 1px solid #39352c;
+    }
+    .step strong { color: var(--gold); font-size: 13px; }
+    .step h3 { margin: 15px 0 10px; font-family: 'Playfair Display', serif; }
+    .step p { color: var(--muted); font-size: 12px; line-height: 1.7; }
+    footer {
+      padding: 25px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 11px;
+    }
+    @media(max-width:650px) {
+      .steps { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header style="padding:25px 7%;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #302c24;">
+    <a href="index.html" class="brand" style="margin:0;">BLIND DATE<span>.</span></a>
+    <a href="login.html" style="color:var(--gold);text-decoration:none;font-size:12px;">Log in</a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <span class="hero-tag">A DIFFERENT KIND OF INTRODUCTION</span>
+      <h1>Some meetings are better left to <span>fate.</span></h1>
+      <p>
+        Tell us what you're looking for. We'll find a compatible match
+        and arrange a one-hour appointment. No chatting. No payments.
+        Just the opportunity to meet someone new.
+      </p>
+      <div class="hero-actions">
+        <a href="register.html" class="primary-link">Join Blind Date</a>
+        <a href="#how" class="secondary-link">Discover how it works</a>
+      </div>
+    </section>
+
+    <section class="how-section" id="how">
+      <h2>Three steps. One introduction.</h2>
+      <div class="steps">
+        <article class="step">
+          <strong>01 — YOUR TYPE</strong>
+          <h3>Tell us what you like</h3>
+          <p>Set your preferences and choose your preferred academic levels.</p>
+        </article>
+        <article class="step">
+          <strong>02 — THE MATCH</strong>
+          <h3>Let us find someone</h3>
+          <p>Our matchmaking system looks for compatible participants.</p>
+        </article>
+        <article class="step">
+          <strong>03 — THE MEETING</strong>
+          <h3>Show up and connect</h3>
+          <p>Receive a weekend appointment at Homeways or Rukkys.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Blind Date. All rights reserved. | For verified adults aged 18 and above.
+  </footer>
+</body>
+</html>
+
