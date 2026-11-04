@@ -1,1 +1,181 @@
 
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+:root {
+  --black: #100f0d;
+  --cream: #f7f3eb;
+  --gold: #c9a66b;
+  --muted: #aaa49a;
+  --white: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--black);
+  color: var(--cream);
+  font-family: 'DM Sans', sans-serif;
+}
+
+.auth-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 45px 20px;
+}
+
+.brand {
+  color: var(--cream);
+  text-decoration: none;
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: 5px;
+  margin-bottom: 35px;
+}
+
+.brand span {
+  color: var(--gold);
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 450px;
+  padding: 42px;
+  background: #191713;
+  border: 1px solid #353027;
+  border-radius: 5px;
+}
+
+.eyebrow {
+  color: var(--gold);
+  font-size: 10px;
+  letter-spacing: 3px;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.auth-card h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 35px;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+.subtitle {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.7;
+  margin-bottom: 30px;
+}
+
+#registerForm {
+  display: flex;
+  flex-direction: column;
+}
+
+#registerForm label {
+  font-size: 12px;
+  margin-bottom: 9px;
+  margin-top: 17px;
+}
+
+#registerForm input:not([type="checkbox"]) {
+  width: 100%;
+  padding: 15px;
+  background: #211f1a;
+  border: 1px solid #39352c;
+  border-radius: 3px;
+  color: var(--white);
+  font-family: inherit;
+  font-size: 13px;
+  outline: none;
+}
+
+#registerForm input:focus {
+  border-color: var(--gold);
+}
+
+#registerForm input::placeholder {
+  color: #777168;
+}
+
+#registerForm input[type="date"] {
+  color-scheme: dark;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--muted);
+  font-size: 11px !important;
+  line-height: 1.5;
+}
+
+.checkbox-label input {
+  accent-color: var(--gold);
+}
+
+#registerButton {
+  width: 100%;
+  padding: 16px;
+  margin-top: 25px;
+  background: var(--gold);
+  color: var(--black);
+  border: none;
+  border-radius: 3px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+#registerButton:hover {
+  background: #e0bd82;
+}
+
+#registerButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+#authMessage {
+  font-size: 12px;
+  color: var(--gold);
+  margin-top: 15px;
+  line-height: 1.6;
+}
+
+.switch-auth {
+  text-align: center;
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 25px;
+}
+
+.switch-auth a {
+  color: var(--gold);
+  text-decoration: none;
+}
+
+@media (max-width: 480px) {
+  .auth-container {
+    padding: 30px 15px;
+  }
+
+  .auth-card {
+    padding: 28px 22px;
+  }
+
+  .auth-card h1 {
+    font-size: 29px;
+  }
+}
+
