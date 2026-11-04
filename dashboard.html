@@ -1,1 +1,52 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Dashboard — Blind Date</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/supabase.js"></script>
+  <script src="js/dashboard.js" defer></script>
+</head>
+<body>
+  <header style="padding:25px 7%;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #302c24;">
+    <a href="index.html" class="brand" style="margin:0;">BLIND DATE<span>.</span></a>
+    <button id="logoutButton" style="background:none;border:1px solid var(--gold);color:var(--gold);padding:10px 16px;cursor:pointer;">Log out</button>
+  </header>
+
+  <main style="max-width:950px;margin:60px auto;padding:0 20px;">
+    <p class="eyebrow">YOUR PERSONAL SPACE</p>
+    <h1 id="welcomeName" style="font-family:'Playfair Display',serif;font-size:38px;font-weight:500;">Welcome.</h1>
+    <p style="color:var(--muted);margin-top:12px;">Your next introduction starts here.</p>
+
+    <section style="margin-top:40px;padding:30px;background:#191713;border:1px solid #39352c;">
+      <p class="eyebrow">ACCOUNT STATUS</p>
+      <h2 id="verificationStatus" style="font-family:'Playfair Display',serif;font-weight:500;">Checking...</h2>
+      <p id="statusDescription" style="color:var(--muted);font-size:13px;margin-top:12px;line-height:1.7;"></p>
+    </section>
+
+    <section style="margin-top:25px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;">
+      <article style="padding:25px;background:#191713;border:1px solid #39352c;">
+        <h3 style="font-family:'Playfair Display',serif;">My Profile</h3>
+        <p style="color:var(--muted);font-size:12px;margin-top:10px;">Manage your personal details and preferences.</p>
+        <span style="display:inline-block;color:var(--gold);font-size:12px;margin-top:20px;">Coming soon</span>
+      </article>
+
+      <article style="padding:25px;background:#191713;border:1px solid #39352c;">
+        <h3 style="font-family:'Playfair Display',serif;">My Match</h3>
+        <p style="color:var(--muted);font-size:12px;margin-top:10px;">Your matchmaking results will appear here.</p>
+        <span style="display:inline-block;color:var(--gold);font-size:12px;margin-top:20px;">Coming soon</span>
+      </article>
+
+      <article style="padding:25px;background:#191713;border:1px solid #39352c;">
+        <h3 style="font-family:'Playfair Display',serif;">Appointments</h3>
+        <p style="color:var(--muted);font-size:12px;margin-top:10px;">View your scheduled weekend appointments.</p>
+        <span style="display:inline-block;color:var(--gold);font-size:12px;margin-top:20px;">Coming soon</span>
+      </article>
+    </section>
+  </main>
+</body>
+</html>
+
