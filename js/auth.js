@@ -14,11 +14,6 @@ if (registerForm) {
     const password = document.getElementById("password").value;
     const consent = document.getElementById("adultConsent").checked;
 
-    if (!consent) {
-      message.textContent = "You must confirm that you are 18 or older.";
-      return;
-    }
-
     const birthDate = new Date(`${dob}T00:00:00`);
     const today = new Date();
 
@@ -28,44 +23,64 @@ if (registerForm) {
     if (
       monthDifference < 0 ||
       (monthDifference === 0 && today.getDate() < birthDate.getDate())
-    ) {
-      age--;
-    }
+    ) age--;
 
-    if (!dob || Number.isNaN(birthDate.getTime()) || age < 18) {
+    if (!consent || !dob || Number.isNaN(birthDate.getTime()) || age < 18) {
       message.textContent = "You must be at least 18 years old.";
       return;
     }
 
     button.disabled = true;
     button.textContent = "Creating account...";
-    message.textContent = "";
 
     const { error } = await supabaseClient.auth.signUp({
       email,
       password,
       options: {
         emailRedirectTo: "https://gregxofficial95-jpg.github.io/blind-date/login.html",
-        data: {
-          full_name: fullName,
-          date_of_birth: dob
-        }
+        data: { full_name: fullName, date_of_birth: dob }
       }
     });
 
     if (error) {
       message.textContent = error.message;
-      button.disabled = false;
-      button.textContent = "Create account";
-      return;
+    } else {
+      message.textContent = "Account created. Check your email to confirm your address.";
+      registerForm.reset();
     }
-
-    message.textContent =
-      "Registration received! Check your email to confirm your account.";
-    registerForm.reset();
 
     button.disabled = false;
     button.textContent = "Create account";
   });
 }
 
+const loginForm = document.getElementById("loginForm");
+
+if (loginForm) {
+  loginForm.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    const button = document.getElementById("loginButton");
+    const message = document.getElementById("loginMessage");
+
+    button.disabled = true;
+    button.textContent = "Logging in...";
+
+    const email = document.getElementById("loginEmail").value.trim();
+    const password = document.getElementById("loginPassword").value;
+
+    const { error } = await supabaseClient.auth.signInWithPassword({
+      email,
+      password
+    });
+
+    if (error) {
+      message.textContent = error.message;
+      button.disabled = false;
+      button.textContent = "Log in";
+      return;
+    }
+
+    window.location.href = "dashboard.html";
+  });
+}
